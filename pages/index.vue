@@ -26,6 +26,10 @@ export default {
 
 
 <template>
+    <div class="main_pictures">
+        <img src="../assets/imges/Obl1.jpg" alt="left" class="main_pictures__item">
+        <img src="../assets/imges/Obl2.jpg" alt="lright" class="main_pictures__item">
+    </div>
     <ul class="listContainer">
     <li v-for="(item) in list" :key="item.id">
         <div class="listContainer_image">
@@ -58,7 +62,7 @@ export default {
         max-height: 450px;
         img{
             width: 100%;
-            height: 375px;
+            height:325px;
         }
     }
 }

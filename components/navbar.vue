@@ -1,7 +1,7 @@
 <template>
     <div class="wrapperNav">
         <div class="wrapperNaw_logo">
-            <NuxtLink :to="'/'"><img src="https://ippevg.github.io/PhServer/Assets/LogoTM.png" class="wrapperNaw_logo_image" alt="Logo"></NuxtLink>
+            <NuxtLink :to="'/'"><img src="../assets/imges/LogoTM.png" class="wrapperNaw_logo_image" alt="Logo"></NuxtLink>
         </div>    
         <ul>
             <li v-for="(item,index) in li" :key="index">
@@ -11,17 +11,22 @@
         <div class="checkInBlock">
             <div class="checkInBlock_items">
                 <NuxtLink :to="'#'">
-                    <img src="https://ippevg.github.io/PhServer/Assets/iconsHeart.png" class="checkInBlock_items_item" alt="heart">
+                    <img src="../assets/imges/iconsHeart.png" class="checkInBlock_items_item" alt="heart">
                 </NuxtLink>
             </div>
             <div class="checkInBlock_items">
                 <NuxtLink :to="'#'">
-                    <img src="https://ippevg.github.io/PhServer/Assets/iconsBag.png" class="checkInBlock_items_item" alt="bag">
+                    <img src="../assets/imges/iconsBag.png" class="checkInBlock_items_item" alt="bag">
                 </NuxtLink>
             </div>
             <div class="checkInBlock_items">
                 <NuxtLink :to="'#'">
-                    <img src="https://ippevg.github.io/PhServer/Assets/iconsBurgerMenu.png" class="checkInBlock_items_item" alt="burger">
+                    <img src="../assets/imges/iconsBurgerMenu.png" class="checkInBlock_items_item" alt="burger">
+                </NuxtLink>
+            </div>
+            <div class="checkInBlock_items">
+                <NuxtLink :to="'#'">
+                    <p class="checkInBlock_items_item__p">Вход</p>
                 </NuxtLink>
             </div>
         </div>
@@ -34,9 +39,9 @@ import { ref } from 'vue'
     export default {
         setup() {
             const li = ref (
-                [{ label: 'Home', to: '/' },
-                { label: 'About Us', to: '/about' },
-                { label: 'Contacts', to: '/contacts' }]
+                [{ label: 'Главная', to: '/' },
+                { label: 'Скидки', to: '/about' },
+                { label: 'Контакты', to: '/contacts' }]
             )
             return{
                 li
@@ -49,12 +54,19 @@ import { ref } from 'vue'
 .wrapperNav{
     display: grid;
     grid-template-rows: 80px;
-    grid-template-columns: 1fr 9fr 3fr;
-    margin: 30px auto ;
+    grid-template-columns: 2.5fr 9fr 5fr;
+    margin: 20px auto ;
     max-height: 80px;
     .wrapperNaw_logo{
-        max-width: 100%;
+        max-width:100%;
+        min-width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width:100%;
 
+        }
     }
 }
 .checkInBlock{
@@ -65,26 +77,34 @@ import { ref } from 'vue'
     justify-content: center;
     gap: 4%;
     height: 100%;
+    padding: 0 20px;
     .checkInBlock_items{
-        max-width: 10%;
+        max-width: 100%;
         .checkInBlock_items_item{
-            width: 100%;
-            padding: 10%;
+            max-width: 50px;
+            padding: 15px;
             box-sizing: border-box;
         }
+        .checkInBlock_items_item__p{
+            padding: 0 15px;
+        }
+        
     }
 }
+
 ul{
     display: flex;
     flex-direction: row;
     align-items:center;
     justify-content: end;
     list-style: none;
+    margin-right: 20px;
     padding: 0;
     li{
         padding: 20px;
         gap: 20px;
     }
 }
+
 
 </style>
