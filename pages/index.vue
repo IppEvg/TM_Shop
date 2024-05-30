@@ -1,70 +1,41 @@
 <script>
-import { reactive,onMounted } from 'vue';
+import listContainer from '~/components/listContainer.vue';
 
-export default {
-    setup() {
-        let list = reactive([])
-        const loadList = async ()=>{
-            try {
-                const loading = await fetch("https://ippevg.github.io/PhServer/List.json")
-                if (loading.ok) {
-                const data = await loading.json()
-                console.log(...data.posts);
-                list.push(...data.posts)
-                } else {
-                console.error("Ошибка при загрузке данных:", response.status)
-                }
-            } catch (error) {
-                console.error("Ошибка сети или сервера:", error)
-            }
-        }
-    onMounted(loadList)
-    return{onMounted,list}
-    },
-}
 </script>
 
 
 <template>
-    <div class="main_pictures">
-        <img src="../assets/imges/Obl1.jpg" alt="left" class="main_pictures__item">
-        <img src="../assets/imges/Obl2.jpg" alt="lright" class="main_pictures__item">
-    </div>
-    <ul class="listContainer">
-    <li v-for="(item) in list" :key="item.id">
-        <div class="listContainer_image">
-            <img :src="item.jpg" alt="jpg">
+    <div class="main_wrapper">
+        <div class="main_pictures">
+            <img src="../assets/imges/Obl1.jpg" alt="left" class="main_pictures__item">
+            <img src="../assets/imges/Obl2.jpg" alt="lright" class="main_pictures__item">
         </div>
-        <h3>
-          {{ item.title }}
-        </h3>
-    </li>
-  </ul>
+        <h1>Каталог</h1>
+        <listContainer></listContainer>
+    </div>
+    
 </template>
 
 <style scoped lang="scss">
-.listContainer{
+.main_wrapper{
+    margin: 0 auto;
+    h1{
+        max-width:800px;
+        margin: 10px auto;
+        font-size: 45px;
+    }
+}
+.main_pictures{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
-    max-width: 2000px;
-    list-style: none;
-    li{
-        padding: 5px;
-        h3{
-            text-align: center;
-        }
-    }
-    .listContainer_image{
+    &__item{
         max-width: 300px;
-        max-height: 450px;
-        img{
-            width: 100%;
-            height:325px;
-        }
+        max-height: 300px;
+        box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.75);
     }
 }
+
 
 </style>

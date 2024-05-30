@@ -21,7 +21,7 @@
             </div>
             <div class="checkInBlock_items">
                 <NuxtLink :to="'#'">
-                    <img src="../assets/imges/iconsBurgerMenu.png" class="checkInBlock_items_item" alt="burger">
+                    <img src="../assets/imges/iconsBurgerMenu.png" class="checkInBlock_items_item burger" v-show="burger" alt="burger">
                 </NuxtLink>
             </div>
             <div class="checkInBlock_items">
@@ -54,7 +54,7 @@ import { ref } from 'vue'
 .wrapperNav{
     display: grid;
     grid-template-rows: 80px;
-    grid-template-columns: 2.5fr 9fr 5fr;
+    grid-template-columns: 2.5fr 9fr 3fr;
     margin: 20px auto ;
     max-height: 80px;
     .wrapperNaw_logo{
@@ -69,20 +69,19 @@ import { ref } from 'vue'
         }
     }
 }
+
 .checkInBlock{
-    max-width: max-content;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 4%;
     height: 100%;
     padding: 0 20px;
     .checkInBlock_items{
         max-width: 100%;
         .checkInBlock_items_item{
             max-width: 50px;
-            padding: 15px;
+            padding: 23%;
             box-sizing: border-box;
         }
         .checkInBlock_items_item__p{

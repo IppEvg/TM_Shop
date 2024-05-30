@@ -1,16 +1,17 @@
 <template>
-  <div>
+  <div class="wrap">
    <navbar></navbar>
-  </div>
   <main>
-    <div class="container">
       <NuxtPage />
-    </div>
   </main>
+  </div>
+  
 </template>
 
 <style lang="scss">
-
+.wrap{
+  max-width:1800px;
+}
 
 
 </style>
