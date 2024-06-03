@@ -1,5 +1,6 @@
 <script>
 import listContainer from '~/components/listContainer.vue';
+import footerComp from '~/components/footer-comp.vue';
 
 </script>
 
@@ -13,6 +14,7 @@ import listContainer from '~/components/listContainer.vue';
         <h1>Каталог</h1>
         <listContainer></listContainer>
     </div>
+    <footerComp></footerComp>
     
 </template>
 
