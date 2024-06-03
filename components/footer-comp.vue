@@ -54,6 +54,9 @@ export default{
                 width: 20px;
             }
         }
+        h4{
+            margin:0.8em 0;
+        }
     }
 }
 .bottom{
